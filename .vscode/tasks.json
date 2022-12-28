@@ -1,0 +1,40 @@
+{
+  "tasks": [
+      {
+          "type": "cppbuild",
+          "label": "C/C++: g++.exe 生成活动文件",
+          "command": "D:\\develop\\mingw64\\bin\\g++.exe",
+          "args": [ // 编译参数列表
+              "-g",
+              "${file}",
+              "-o",
+              "${fileDirname}\\${fileBasenameNoExtension}.exe",
+              "-DLOCAL",
+              "-fexec-charset=GBK", // 防止输出中文时乱码
+              "-static-libgcc",
+          ],
+          "options": {
+              "cwd": "${workspaceFolder}"
+          },
+          "problemMatcher": [
+              "$gcc"
+          ],
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "detail": "调试器生成的任务。"
+      },
+      { // 复制模板文件（仅限cpp）
+          "type": "shell",
+          "label": "prepare",
+          "command": "copy",
+          "args": [
+              "${workspaceFolder}\\template.cpp",
+              "${workspaceFolder}\\${relativeFile}"
+          ],
+          "problemMatcher": []
+      }
+  ],
+  "version": "2.0.0"
+}
